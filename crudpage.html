@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Your Trip - Pushpa Travel Agency</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <section class="form-section">
+    <h1>Book Your Dream Vacation</h1>
+    <img src="images/booking.jpg" alt="Booking Image" class="full-width-image">
+
+    <form class="booking-form" onsubmit="showConfirmation(event)">
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="destination">Select Destination:</label>
+        <select id="destination" name="destination" required>
+          <option value="">--Choose--</option>
+          <option value="paris">Paris</option>
+          <option value="bali">Bali</option>
+          <option value="tokyo">Tokyo</option>
+          <option value="newyork">New York</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Travel Date:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="travelers">Number of Travelers:</label>
+        <input type="number" id="travelers" name="travelers" min="1" required>
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit">Confirm Booking</button>
+        <button type="reset">Clear Form</button>
+      </div>
+    </form>
+
+    <!-- Confirmation message -->
+    <div id="confirmation" class="confirmation-message" style="display: none;">
+      ✅ Your booking was submitted successfully!
+    </div>
+  </section>
+
+  <script>
+    function showConfirmation(event) {
+      event.preventDefault();
+      document.getElementById("confirmation").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

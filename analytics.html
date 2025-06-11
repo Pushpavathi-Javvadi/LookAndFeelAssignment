@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analytics - Pushpavathi Travel Agency</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="hero" style="background-image: url('images/analytics.jpg');">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="crudpage.html">Bookings</a>
+      <a href="analytics.html">Analytics</a>
+    </nav>
+    <div class="hero-text">
+      <h1>Travel Analytics</h1>
+      <p>See where travelers go the most!</p>
+    </div>
+  </header>
+  <section class="chart-section">
+    <canvas id="cityBarChart"></canvas>
+<script>
+  const ctx = document.getElementById('cityBarChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Paris', 'Bali', 'Tokyo', 'New York'],
+      datasets: [{
+        label: 'Trips Booked',
+        data: [40, 65, 30, 50],
+        backgroundColor: [
+          '#f94144', // Paris
+          '#f3722c', // Bali
+          '#43aa8b', // Tokyo
+          '#577590'  // New York
+        ],
+        borderColor: [
+          '#f94144',
+          '#f3722c',
+          '#43aa8b',
+          '#577590'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 10
+          }
+        }
+      }
+    }
+  });
+</script>
+
+
+
+
+  </section>
+</body>
+</html>
